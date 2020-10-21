@@ -7,4 +7,13 @@
     <p class='serv-explain'>
     投資家と企業の架け橋を目指しています。
     </p>
+    <%# <% if user_signed_in? && current_user == @user || current_user.admin? %> 
+    <% if user_signed_in? && current_user.admin? && !(current_user == @user) %>
+<div class='purchase-btn'>
+  <span class='purchase-btn-text'>投稿する</span>
+  <a href=" /tweets/new">
+    <%= image_tag 'memo.jpeg' , size: '185x50' ,class: "purchase-btn-icon" %>
+  </a>
+</div>
+<% end %> 
   </div>
